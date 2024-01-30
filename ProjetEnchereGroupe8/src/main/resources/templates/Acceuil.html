@@ -2,24 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acceuil</title>
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+	rel="stylesheet">
+
+    <link rel="icon" href="../static/favicon.png">
+
+
+<title>BidwiT</title>
 </head>
 <body>
-	<h1>ENI-Encheres</h1>
-	<h2>Liste des Encheres</h2>
-	<nav>
-		<a href="/CreerCompte">S'inscrire</a> <a href="/Connexion">Se
-			connecter</a> <a href="/NouvelleVente">Vendre un article</a>
+	<h1><a href="/Accueil" class="lien_bidwit">BidwiT</a></h1>
+	<h2>Articles mis en vente</h2>
+	<nav class="nav-container">
+		<ul class="nav-list">
+			<li><a href="/CreerCompte" class="nav-link">S'inscrire</a></li>
+			<li><a href="/Connexion" class="nav-link">Se connecter</a></li>
+			<li><a href="/NouvelleVente" class="nav-link">Vendre un
+					article</a></li>
+		</ul>
 	</nav>
-	<form>
+	<form class="barre-recherche">
 		<input type="search" id="maRecherche" name="filtre"
-			placeholder="Le nom de l'article contient…">
+			placeholder="Rechercher des articles">
 		<button>Rechercher</button>
 	</form>
 
-	<label for="select-Categorie">Categorie:</label>
-	<select name="Categorie" id="select-Categorie">
+	<label for="nom_categorie" class="nom_categorie">Categorie:</label>
+	<select name="Categorie" id="select-Categorie" class="select-Categorie">
 		<option value="">--Toutes--</option>
 		<option value="informatique">Informatique</option>
 		<option value="Ameublement">Ameublement</option>
@@ -27,24 +45,48 @@
 		<option value="sport/loisirs">Sport&Loisirs</option>
 	</select>
 
-	<table class="table table-hover">
-		<tr data-th-each="article: ${articles}">
 
-			<td data-th-text="${article.noArticle}"></td>
-			<td data-th-text="${article.nomArticle}"></td>
-			<td data-th-text="${article.description}"></td>
-			<td data-th-text="${article.dateDebutEncheres}"></td>
-			<td data-th-text="${article.dateFinEncheres}"></td>
-			<td data-th-text="${article.prixInitial}"></td>
-			<td data-th-text="${article.prixVente}"></td>
-			<td data-th-text="${article.categorie.libelle}"></td>
-			<td data-th-text="${article.vendeur.pseudo}"></td>
-			<td><a
-				th:href="@{/detailarticle(noArticle=${article.noArticle})}">Voir
-					la vente</a>
-		</tr>
-	</table>
+ <div class="tableau_article" >
+    <div class="box_article" data-th-each="article: ${articles}" >
+
+   
+          <div class="info-article" data-th-text="${article.nomArticle}"></div>
+         <div class="info-article" data-th-text="${article.prixInitial}" ></div>
+          <div class="info-article"data-th-text="${article.vendeur.pseudo}"></div>
+          <div class="info-article"data-th-text="${article.dateFinEncheres}"></div>
+          <a class="info-article"
+				th:href="@{/detailarticle(noArticle=${article.noArticle})}"
+				> Détails</a>
+        </div>
+        </div>
+  
+
 
 
 </body>
 </html>
+
+
+
+
+<!-- 	<table class="tableau_article">
+  <tbody>
+    <tr data-th-each="article: ${articles}">
+      <td >
+        <div class="box_article">
+          <div class="info-article" data-th-text="${article.nomArticle}"></div>
+         <div class="info-article" data-th-text="${article.prixInitial}" ></div>
+          <div class="info-article"data-th-text="${article.vendeur.pseudo}"></div>
+          <div class="info-article"data-th-text="${article.dateFinEncheres}"></div>
+          <a class="info-article"
+				th:href="@{/detailarticle(noArticle=${article.noArticle})}"
+				> Détails</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html> -->

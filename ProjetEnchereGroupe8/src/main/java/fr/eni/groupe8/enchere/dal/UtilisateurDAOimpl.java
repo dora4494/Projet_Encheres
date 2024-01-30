@@ -1,14 +1,11 @@
 package fr.eni.groupe8.enchere.dal;
 
 import java.util.List;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -26,7 +23,6 @@ public class UtilisateurDAOimpl implements UtilisateurDAO {
 	private final static String INSERT = "insert into UTILISATEURS ( pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) values ( :pseudo, :nom, :prenom, :email, :telephone, :rue, :codePostal, :ville, :motDePasse, :credit, :administrateur)";
 	private final static String UPDATE = "update UTILISATEURS set pseudo=:pseudo, nom=:nom, prenom=:prenom, email=:email, telephone=:telephone, rue=:rue, code_postal=:codePostal, ville=:ville, mot_de_passe=:motDePasse, :credit=:credit, administrateur=:administrateur WHERE no_utilisateur=:noUtilisateur ";
 	private static final String FIND_BY_EMAIL = "select * from UTILISATEURS WHERE email=:email";
-//	private static final String FIND_BY_EMAIL_2 = "select * from UTILISATEURS WHERE email=?"; // Autre méthode proposée par le formateur
 
 	@Autowired
 	NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -39,27 +35,16 @@ public class UtilisateurDAOimpl implements UtilisateurDAO {
 		System.out.println("findAllUtilisateurs");
 		return lstUtilisteur;
 	}
-
+/******************************************************************************************************/
 	// @Override
 	public Utilisateur readUtilisateur_email(String email) {
-		MapSqlParameterSource namedParameters = new MapSqlParameterSource();
-		namedParameters.addValue("email", email);
+		MapSqlParameterSource namedParameters = new MapSqlParameterSource(); // Cet objet est utilisé pour stocker les paramètres qui seront passés à la requête SQL.j
+		namedParameters.addValue("email", email); //l'email est ajouté a l'objet namedParameters avec la cle "email"
 		System.out.println("readUtilisateur_email");
-		return namedParameterJdbcTemplate.queryForObject(FIND_BY_EMAIL, namedParameters,
-				new BeanPropertyRowMapper<>(Utilisateur.class));
+		return namedParameterJdbcTemplate.queryForObject(FIND_BY_EMAIL, namedParameters, //execution le requette SQL // NamedParameterJdbcTemplate est utilisée pour exécuter des requêtes SQL paramétrées // queryForObject est une méthode de NamedParameterJdbcTemplate utilisée pour exécuter une requête SQL qui devrait renvoyer un seul résultat.
+				new BeanPropertyRowMapper<>(Utilisateur.class)); // pour mapper les résultats de la requête SQL aux propriétés d'un objet de la classe "Utilisateur". Cela signifie que le résultat de la requête sera transformé en un objet "Utilisateur" correspondant.
 	}
-
-	/**
-	 * Autre méthode proposée par le formateur
-	 * 
-	 * @Override public Utilisateur readUtilisateur2(String email) {
-	 * 
-	 *           return
-	 *           namedParameterJdbcTemplate.getJdbcOperations().queryForObject(FIND_BY_EMAIL,
-	 *           new BeanPropertyRowMapper<>(Utilisateur.class), email); }
-	 * 
-	 */
-
+/**********************************************************************************************************/
 	public Utilisateur readUtilisateur(Integer noUtilisateur) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("no_utilisateur", noUtilisateur);

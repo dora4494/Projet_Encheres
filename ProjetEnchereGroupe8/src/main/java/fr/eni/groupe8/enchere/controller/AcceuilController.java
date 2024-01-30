@@ -21,7 +21,7 @@ public class AcceuilController { // Contrôleur pour la page d'accueil et la rec
 
 	}
 
-	@GetMapping({ "/", "/Acceuil" })
+	@GetMapping({"/", "/Acceuil" })
 	public String afficherAcceuil(Model model) {
 		model.addAttribute("articles", service.findAllArticles());
 		System.out.println("mappingAcceuil");

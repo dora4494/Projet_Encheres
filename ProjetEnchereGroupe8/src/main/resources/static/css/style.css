@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #696969;
+
+}
+
+.lien_bidwit {
+	font-family: 'Permanent Marker', cursive;
+	color: #FFD700;
+	margin-top: 0%; /* Adjust this value as needed */
+	margin-left: 1.5%;
+	text-decoration: none
+}
+
+h2 {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #696969;
+	margin-left: 2%;
+	display: inline;
+	/* Ajoutez cette propriété pour afficher le titre en ligne */
+	position: relative;
+	top: 60px;
+	margin-top: 0
+}
+
+.h2_connexion {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #696969;
+	margin-left: 28%;
+	position: relative;
+	top: -2px;
+}
+
+.h2_inscription {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #696969;
+	margin-left: 32%;
+	position: relative;
+	top: 80px;
+	/* Ajustez cette valeur pour déplacer le titre vers le haut */
+	margin-top: 0; } .h3_inscription {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #696969;
+	margin-left: 35%;
+	position: relative;
+	top: 10px;
+	/* Ajustez cette valeur pour déplacer le titre vers le haut */
+}
+
+.connexion_container, .inscription_container {
+	margin-left: 33%;
+	margin-top: 0%
+}
+
+.inscription_bouton {
+	margin-left: 41%;
+	margin-top: 6%;
+	text-decoration: none;
+	width: auto; /* Ajuster la largeur à "auto" */
+	text-align: center;
+	line-height: 2;
+	color: white;
+	font-weight: bolder;
+	border-radius: 5px;
+	background: #696969;
+	padding: 1px 38px;
+	outline: none
+}
+
+.connexion_box {
+	margin: 2%
+}
+
+.form_aligne {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 3% 8%;
+}
+
+.inscription_container {
+	margin-top: 6%;
+	margin-left: 20%;
+	width: 60%;
+}
+
+.form_aligne .inscription_box {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin: 0, 5%;
+}
+
+.form_aligne .inscription_box label {
+	margin-right: 20px;
+}
+
+h3 {
+	margin-top: 7%;
+	margin-left: 32%;
+}
+
+body, html {
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	width: 100%;
+}
+
+li {
+	display: inline;
+}
+
+li:last-child a {
+	margin-right: 0;
+}
+
+.nav-container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 60%
+}
+
+
+.nav-list {
+	margin-left: 50%;
+	margin-top: 2.5%;
+}
+
+.nav-list-membre {
+	margin-left: 25%;
+	margin-top: 2.5%;
+}
+
+.nav-list-with-acceuil {
+	margin-left: 43%;
+	margin-top: 2.5%;
+}
+
+.nav-link {
+	text-decoration: none;
+	display: inline-block;
+	width: auto; /* Ajuster la largeur à "auto" */
+	margin-right: 1%;
+	text-align: center;
+	line-height: 2;
+	color: white;
+	font-weight: bolder;
+	border-radius: 5px;
+	background: #FFD700;
+	outline: none;
+	padding: 1px 8px;
+}
+
+/* Réinitialiser les styles par défaut du formulaire */
+.barre-recherche {
+	top: 3.5%;
+	position: fixed;
+	width: 45%;
+	left: 15%
+}
+
+/* Style de l'input de recherche */
+.barre-recherche input[type="search"] {
+	flex: 1;
+	padding: 8px 35px;
+	border: none;
+	border-radius: 5px;
+	font-size: 17px;
+	outline: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: #F0F8FF;
+}
+
+/* Style du bouton de recherche */
+.barre-recherche button {
+	margin-left: 10px;
+	padding: 8px 15px;
+	border: none;
+	border-radius: 5px;
+	background-color: #EEEEEE;
+	color: #9E9E9E;
+	font-size: 17px;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du bouton de recherche au survol */
+.barre-recherche button:hover {
+	background-color: #F5F5F5
+}
+
+/* Style du bouton de recherche lorsqu'il est cliqué */
+.barre-recherche button:active {
+	background-color: #F5F5F5
+}
+
+/* Style personnalisé pour le conteneur de l'article */
+.box_article {
+	width: 17%;
+	/* Ajustez cette valeur pour contrôler la largeur de chaque conteneur d'article */
+	margin: 1%;
+	/* Ajustez cette valeur pour ajouter de l'espace entre les conteneurs d'articles */
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	/* Inclure les bordures et les paddings dans la largeur totale */
+}
+
+/* Créer une grille de 4 colonnes */
+.tableau_article {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 2%;
+	margin-top: 70px;
+}
+
+/* Style pour chaque information de l'article */
+.info-article {
+	margin: 5px;
+}
+
+.nom_categorie {
+	margin-left: 4%;
+	display: inline;
+	/* Ajoutez cette propriété pour afficher le titre en ligne */
+	margin-top: 0;
+	position: relative;
+	top: 60px;
+	font-size: 110%
+}
+
+.select-Categorie {
+	display: inline;
+	/* Ajoutez cette propriété pour afficher le titre en ligne */
+	margin-top: 0;
+	position: relative;
+	top: 60px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 110%;
+	color: #696969;
+	padding: 4px 7px;
+	border-radius: 5px;
+}
+
+.image_connexion {
+	width: 600px; /* Largeur de l'image (ajustez selon vos préférences) */
+	height: auto;
+	/* Hauteur automatique pour maintenir les proportions de l'image */
+	margin-left: 25%;
+	display: inline-block;
+	position: relative;
+	/* Permet de positionner l'image par rapport à sa position normale */
+	top: -30px;
+	/* Ajuste la position verticale de l'image vers le haut (-20px dans cet exemple) */
+}
+
+.DetailVente {
+    margin-left: 15%;
+    margin-top: 4%;
+    border: 1px solid #ccc; /* Bordure grise fine de 1 pixel */
+    width: 50%;
+    box-sizing: border-box; /* Inclure la bordure dans le calcul total de la hauteur */
+    height: 350px; /* Définissez la hauteur souhaitée de la div */
+    padding: 7%;
+   
+}
+
+.h3_article {
+	background-color: #FDF5E6;
+	width: 87%;
+	padding: 1%;
+	margin-left: 5%;
+	border-radius : 8px
+	
+}
+
+.tab_info_article {
+	margin-top: -12%;
+	margin-left: -15%
+}
+
+.tab_info_vendeur {
+	margin-top: 5%;
+	margin-left: -15%
+}
+
+.h3_connexion {
+	
+	margin-top: 4%;
+	margin-left: 32%
+}
+
+.creer_compte_bouton_connexion {
+	margin-top: 1%;
+	margin-left: 41%
+}
+
+.description-enchere {
+    margin-top: 20px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.encadre-description {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    width: 90%; /* Ajustez la largeur de l'encadrement */
+    height:30%
+}
+
+.meilleure-offre {
+    position: fixed;
+    top: 50%; /* Ajustez la position verticale selon vos besoins */
+    right: 20%; /* Ajustez la position horizontale selon vos besoins */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}

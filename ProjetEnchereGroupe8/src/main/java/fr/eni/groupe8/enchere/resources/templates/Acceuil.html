@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+	rel="stylesheet">
+
+    <link rel="icon" href="ressources/static/favicon.png">
+
+
+<title>BidwiT</title>
+</head>
+<body>
+	<h1><a href="/Accueil" class="lien_bidwit">BidwiT</a></h1>
+	<h2>Articles mis en vente</h2>
+	<nav class="nav-container">
+		<ul class="nav-list">
+			<li><a href="/CreerCompte" class="nav-link">S'inscrire</a></li>
+			<li><a href="/Connexion" class="nav-link">Se connecter</a></li>
+			<li><a href="/NouvelleVente" class="nav-link">Vendre un
+					article</a></li>
+		</ul>
+	</nav>
+	<form class="barre-recherche">
+		<input type="search" id="maRecherche" name="filtre"
+			placeholder="Rechercher des articles">
+		<button>Rechercher</button>
+	</form>
+
+	<label for="nom_categorie" class="nom_categorie">Categorie:</label>
+	<select name="Categorie" id="select-Categorie" class="select-Categorie">
+		<option value="">--Toutes--</option>
+		<option value="informatique">Informatique</option>
+		<option value="Ameublement">Ameublement</option>
+		<option value="vetement">Vetement</option>
+		<option value="sport/loisirs">Sport&Loisirs</option>
+	</select>
+
+
+ <div class="tableau_article" >
+    <div class="box_article" data-th-each="article: ${articles}" >
+
+   
+          <div class="info-article" data-th-text="${article.nomArticle}"></div>
+         <div class="info-article" data-th-text="${article.prixInitial}" ></div>
+          <div class="info-article"data-th-text="${article.vendeur.pseudo}"></div>
+          <div class="info-article"data-th-text="${article.dateFinEncheres}"></div>
+          <a class="info-article"
+				th:href="@{/detailarticle(noArticle=${article.noArticle})}"
+				> Détails</a>
+        </div>
+        </div>
+  
+
+
+
+</body>
+</html>
+
+
+
+
+<!-- 	<table class="tableau_article">
+  <tbody>
+    <tr data-th-each="article: ${articles}">
+      <td >
+        <div class="box_article">
+          <div class="info-article" data-th-text="${article.nomArticle}"></div>
+         <div class="info-article" data-th-text="${article.prixInitial}" ></div>
+          <div class="info-article"data-th-text="${article.vendeur.pseudo}"></div>
+          <div class="info-article"data-th-text="${article.dateFinEncheres}"></div>
+          <a class="info-article"
+				th:href="@{/detailarticle(noArticle=${article.noArticle})}"
+				> Détails</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html> -->
